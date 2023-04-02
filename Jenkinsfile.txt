@@ -57,6 +57,15 @@ pipeline {
         }
 		//Code ends for stage Launch Tomcat Server
 		
+		//Code ends for stage Launch Tomcat Server
+		
+		//Code starts for Deploy War on Tomcat Server
+		stage('Deploy War on Tomcat Server') {
+            steps {
+                sh 'cp /var/jenkins_home/workspace/JenkinsPipelineTesting/target/ExpenseApp-1.war /tmp/apache-tomcat-9.0.73/webapps'
+            }
+        }
+		
 		//Code starts for stage System Test
 		stage('System Test') {
             steps {
